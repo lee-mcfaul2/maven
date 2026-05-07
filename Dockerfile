@@ -288,12 +288,6 @@ RUN set -eux \
 RUN mkdir -p /root/.m2/repository
 # Maven pin batch 1 (entries 1-250 of 1254)
 RUN set -eux \
- && mkdir -p '/root/.m2/repository/.meta' \
- && curl -fsSL 'https://repo1.maven.org/maven2/.meta/prefixes-apache.snapshots.txt' -o '/root/.m2/repository/.meta/prefixes-apache.snapshots.txt' \
- && echo '69549f228fd321abaa47cd06972f1eca8fac4b343649892b8b25c6afec7d25f5  /root/.m2/repository/.meta/prefixes-apache.snapshots.txt' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/.meta' \
- && curl -fsSL 'https://repo1.maven.org/maven2/.meta/prefixes-central.txt' -o '/root/.m2/repository/.meta/prefixes-central.txt' \
- && echo '74d3a368e5daff3c9844a159721912c299dc5019961cac945fc85afcc6d5d763  /root/.m2/repository/.meta/prefixes-central.txt' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/aopalliance/aopalliance/1.0' \
  && curl -fsSL 'https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar' -o '/root/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar' \
  && echo '0addec670fedcd3f113c5c8091d783280d23f75e3acb841b61a9cdb079376a08  /root/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar' | sha256sum -c - \
@@ -531,9 +525,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/com/github/siom79/japicmp/japicmp/0.25.6' \
  && curl -fsSL 'https://repo1.maven.org/maven2/com/github/siom79/japicmp/japicmp/0.25.6/japicmp-0.25.6.pom' -o '/root/.m2/repository/com/github/siom79/japicmp/japicmp/0.25.6/japicmp-0.25.6.pom' \
  && echo 'bafeb469dce350e9fe33470edac2a54b211f8a2cc09b41692ce98cc7368d3536  /root/.m2/repository/com/github/siom79/japicmp/japicmp/0.25.6/japicmp-0.25.6.pom' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/com/github/siom79/japicmp' \
- && curl -fsSL 'https://repo1.maven.org/maven2/com/github/siom79/japicmp/maven-metadata-central.xml' -o '/root/.m2/repository/com/github/siom79/japicmp/maven-metadata-central.xml' \
- && echo 'ff03349689bce20b32f086bc102c75d3748c3532e9b9949fee9a9bed44215fae  /root/.m2/repository/com/github/siom79/japicmp/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/com/google/code/findbugs/jsr305/3.0.2' \
  && curl -fsSL 'https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar' -o '/root/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar' \
  && echo '766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7  /root/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar' | sha256sum -c - \
@@ -1087,9 +1078,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/dev/equo/ide/solstice/1.8.1' \
  && curl -fsSL 'https://repo1.maven.org/maven2/dev/equo/ide/solstice/1.8.1/solstice-1.8.1.pom' -o '/root/.m2/repository/dev/equo/ide/solstice/1.8.1/solstice-1.8.1.pom' \
  && echo '6ab4a8ecae2abbd36b919d0b9b9fb24c177148f13e5364c97a0c6ee11a3fc426  /root/.m2/repository/dev/equo/ide/solstice/1.8.1/solstice-1.8.1.pom' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/dev/jbang' \
- && curl -fsSL 'https://repo1.maven.org/maven2/dev/jbang/maven-metadata-central.xml' -o '/root/.m2/repository/dev/jbang/maven-metadata-central.xml' \
- && echo '72eafa89f055ebb8f20e4327d14fbc5a5e337876893619ec52c44e3de112447e  /root/.m2/repository/dev/jbang/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/dom4j/dom4j/1.1' \
  && curl -fsSL 'https://repo1.maven.org/maven2/dom4j/dom4j/1.1/dom4j-1.1.jar' -o '/root/.m2/repository/dom4j/dom4j/1.1/dom4j-1.1.jar' \
  && echo '50bd5c21b5fbd27b8bbb5f8050544b53f49a4480fd347ce9c46d55c706015156  /root/.m2/repository/dom4j/dom4j/1.1/dom4j-1.1.jar' | sha256sum -c - \
@@ -1150,9 +1138,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/eu/maveniverse/maven/plugins/bom-builder3/1.3.3' \
  && curl -fsSL 'https://repo1.maven.org/maven2/eu/maveniverse/maven/plugins/bom-builder3/1.3.3/bom-builder3-1.3.3.pom' -o '/root/.m2/repository/eu/maveniverse/maven/plugins/bom-builder3/1.3.3/bom-builder3-1.3.3.pom' \
  && echo 'f56e64a3c644d881a417ba8cda6b4c6f0a7d07b60a4e5d97498785888e7ac708  /root/.m2/repository/eu/maveniverse/maven/plugins/bom-builder3/1.3.3/bom-builder3-1.3.3.pom' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/eu/maveniverse/maven/plugins' \
- && curl -fsSL 'https://repo1.maven.org/maven2/eu/maveniverse/maven/plugins/maven-metadata-central.xml' -o '/root/.m2/repository/eu/maveniverse/maven/plugins/maven-metadata-central.xml' \
- && echo '1652f4104f1c905a78d5c08301c9ffed35ac91db8b97703a5f5a201a5b95afaa  /root/.m2/repository/eu/maveniverse/maven/plugins/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/eu/maveniverse/maven/shared/core/0.1.11' \
  && curl -fsSL 'https://repo1.maven.org/maven2/eu/maveniverse/maven/shared/core/0.1.11/core-0.1.11.jar' -o '/root/.m2/repository/eu/maveniverse/maven/shared/core/0.1.11/core-0.1.11.jar' \
  && echo '93d747139ab426a9183dca7dc0e0300f11112255ce7c0d0fd5126461ee0f0d39  /root/.m2/repository/eu/maveniverse/maven/shared/core/0.1.11/core-0.1.11.jar' | sha256sum -c - \
@@ -1177,9 +1162,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/io/airlift/aircompressor/0.27' \
  && curl -fsSL 'https://repo1.maven.org/maven2/io/airlift/aircompressor/0.27/aircompressor-0.27.pom' -o '/root/.m2/repository/io/airlift/aircompressor/0.27/aircompressor-0.27.pom' \
  && echo '5aacda89be38563bdf3bfac79333616c0802ca617070dea66ba649507c994441  /root/.m2/repository/io/airlift/aircompressor/0.27/aircompressor-0.27.pom' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/io/github/olamy/maven/plugins' \
- && curl -fsSL 'https://repo1.maven.org/maven2/io/github/olamy/maven/plugins/maven-metadata-central.xml' -o '/root/.m2/repository/io/github/olamy/maven/plugins/maven-metadata-central.xml' \
- && echo 'a75263508af613f367724e192371c7be57d129bf372f25aea59025a5105413c3  /root/.m2/repository/io/github/olamy/maven/plugins/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/io/github/x-stream/mxparser/1.2.2' \
  && curl -fsSL 'https://repo1.maven.org/maven2/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.jar' -o '/root/.m2/repository/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.jar' \
  && echo 'aeeee23a3303d811bca8790ea7f25b534314861c03cff36dafdcc2180969eb97  /root/.m2/repository/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.jar' | sha256sum -c - \
@@ -1961,9 +1943,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/org/apache/maven/maven-core/3.9.8' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven-core/3.9.8/maven-core-3.9.8.jar' -o '/root/.m2/repository/org/apache/maven/maven-core/3.9.8/maven-core-3.9.8.jar' \
  && echo '136d95ada12098f48222638bfdb68ace0e1b518d676cd43845d31eb0aed37736  /root/.m2/repository/org/apache/maven/maven-core/3.9.8/maven-core-3.9.8.jar' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/org/apache/maven/maven-core' \
- && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven-core/maven-metadata-central.xml' -o '/root/.m2/repository/org/apache/maven/maven-core/maven-metadata-central.xml' \
- && echo 'b0acb8ac9bc9877b21aedaae2790be37e87ca0ef252e2c8aa4c9ed7a0a1b919b  /root/.m2/repository/org/apache/maven/maven-core/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/org/apache/maven/maven-model-builder/3.1.0' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.jar' -o '/root/.m2/repository/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.jar' \
  && echo '45f437ef89851578e7d230c873b7aa766147e807100a044e7d17213f0a8ac2e5  /root/.m2/repository/org/apache/maven/maven-model-builder/3.1.0/maven-model-builder-3.1.0.jar' | sha256sum -c - \
@@ -1991,9 +1970,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/org/apache/maven/maven-model/3.9.8' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven-model/3.9.8/maven-model-3.9.8.jar' -o '/root/.m2/repository/org/apache/maven/maven-model/3.9.8/maven-model-3.9.8.jar' \
  && echo '9b4be46c55f0720162664615d4fe8468f99866697a484e1652a19189656cb37d  /root/.m2/repository/org/apache/maven/maven-model/3.9.8/maven-model-3.9.8.jar' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/org/apache/maven/maven-model' \
- && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven-model/maven-metadata-central.xml' -o '/root/.m2/repository/org/apache/maven/maven-model/maven-metadata-central.xml' \
- && echo 'cd0bedd0c552c9c85f6c607a28bc32e1b265b73a8e8a0555549dbe273718c0db  /root/.m2/repository/org/apache/maven/maven-model/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/org/apache/maven/maven-parent/10' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven-parent/10/maven-parent-10.pom' -o '/root/.m2/repository/org/apache/maven/maven-parent/10/maven-parent-10.pom' \
  && echo '81fe14cb9779d36e0c610e1049e5b32a6b9974957f257921acf628b31c5486c8  /root/.m2/repository/org/apache/maven/maven-parent/10/maven-parent-10.pom' | sha256sum -c - \
@@ -2060,9 +2036,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/org/apache/maven/maven-plugin-api/3.9.8' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven-plugin-api/3.9.8/maven-plugin-api-3.9.8.jar' -o '/root/.m2/repository/org/apache/maven/maven-plugin-api/3.9.8/maven-plugin-api-3.9.8.jar' \
  && echo 'ec0d41b3c6de899b202523373fdf8571d354f09052c17bf4230baa1ca1cd7936  /root/.m2/repository/org/apache/maven/maven-plugin-api/3.9.8/maven-plugin-api-3.9.8.jar' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/org/apache/maven/maven-plugin-api' \
- && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven-plugin-api/maven-metadata-central.xml' -o '/root/.m2/repository/org/apache/maven/maven-plugin-api/maven-metadata-central.xml' \
- && echo '466abf9b078d4aaa71480063f70f0c8471e720012cb8ab7f24e7cba2069db70b  /root/.m2/repository/org/apache/maven/maven-plugin-api/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/org/apache/maven/maven-repository-metadata/3.1.0' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.jar' -o '/root/.m2/repository/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.jar' \
  && echo '1f98b8b101fea1167d3d5dfd6439757bd96f79e62388323af258fddc1e60382e  /root/.m2/repository/org/apache/maven/maven-repository-metadata/3.1.0/maven-repository-metadata-3.1.0.jar' | sha256sum -c - \
@@ -2078,9 +2051,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/org/apache/maven/maven-settings-builder/3.9.8' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven-settings-builder/3.9.8/maven-settings-builder-3.9.8.jar' -o '/root/.m2/repository/org/apache/maven/maven-settings-builder/3.9.8/maven-settings-builder-3.9.8.jar' \
  && echo '46471aa98f27db5c8a90b383294d8ac3b529b7c30afe2bf02ac996cc2c175c99  /root/.m2/repository/org/apache/maven/maven-settings-builder/3.9.8/maven-settings-builder-3.9.8.jar' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/org/apache/maven/maven-settings-builder' \
- && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven-settings-builder/maven-metadata-central.xml' -o '/root/.m2/repository/org/apache/maven/maven-settings-builder/maven-metadata-central.xml' \
- && echo '398d0c87fd99956cad8408c5fadb334e640b8e056776888346a75f05b9297c7f  /root/.m2/repository/org/apache/maven/maven-settings-builder/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/org/apache/maven/maven-settings/3.1.0' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.jar' -o '/root/.m2/repository/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.jar' \
  && echo 'a44bb2a6c8571269a06ab8efba046fd319af34c4985deda66512dc1e648f301a  /root/.m2/repository/org/apache/maven/maven-settings/3.1.0/maven-settings-3.1.0.jar' | sha256sum -c - \
@@ -2090,9 +2060,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/org/apache/maven/maven-settings/3.9.8' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven-settings/3.9.8/maven-settings-3.9.8.jar' -o '/root/.m2/repository/org/apache/maven/maven-settings/3.9.8/maven-settings-3.9.8.jar' \
  && echo '4087160614240b04cbb7e1d3af46ee27362e9d0d52e18356dd8bac7c183288ec  /root/.m2/repository/org/apache/maven/maven-settings/3.9.8/maven-settings-3.9.8.jar' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/org/apache/maven/maven-settings' \
- && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven-settings/maven-metadata-central.xml' -o '/root/.m2/repository/org/apache/maven/maven-settings/maven-metadata-central.xml' \
- && echo '5f8260b20569be406f55e54e1ba367f3a74d04231afa42d971672a8293a84e07  /root/.m2/repository/org/apache/maven/maven-settings/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/org/apache/maven/maven/2.2.1' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/maven/2.2.1/maven-2.2.1.pom' -o '/root/.m2/repository/org/apache/maven/maven/2.2.1/maven-2.2.1.pom' \
  && echo 'd135cff96dcbbc8a5fab30180e557cae620373cf26941d4c738a88896a2d98ed  /root/.m2/repository/org/apache/maven/maven/2.2.1/maven-2.2.1.pom' | sha256sum -c - \
@@ -2183,12 +2150,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/org/apache/maven/plugins/maven-javadoc-plugin/3.12.0' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-javadoc-plugin/3.12.0/maven-javadoc-plugin-3.12.0.pom' -o '/root/.m2/repository/org/apache/maven/plugins/maven-javadoc-plugin/3.12.0/maven-javadoc-plugin-3.12.0.pom' \
  && echo '52a8ac60e49f7fede1bb94f71ba28160eff31b9931db5715791f9462c90a8976  /root/.m2/repository/org/apache/maven/plugins/maven-javadoc-plugin/3.12.0/maven-javadoc-plugin-3.12.0.pom' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/org/apache/maven/plugins' \
- && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-metadata-apache.snapshots.xml' -o '/root/.m2/repository/org/apache/maven/plugins/maven-metadata-apache.snapshots.xml' \
- && echo 'f6867534aba0ee5fe93c006bd8bf578724d7aba6ba7ede7220a59263dd14740e  /root/.m2/repository/org/apache/maven/plugins/maven-metadata-apache.snapshots.xml' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/org/apache/maven/plugins' \
- && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-metadata-central.xml' -o '/root/.m2/repository/org/apache/maven/plugins/maven-metadata-central.xml' \
- && echo 'a75e1dabe720b94425a4708ce8c06cce84f7d3cbed32049b1a3170b732d5e11f  /root/.m2/repository/org/apache/maven/plugins/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/org/apache/maven/plugins/maven-plugins/43' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/43/maven-plugins-43.pom' -o '/root/.m2/repository/org/apache/maven/plugins/maven-plugins/43/maven-plugins-43.pom' \
  && echo 'a177f84e01c3829a357b8f135686ae7dd8c35d1c2089a390ef089340aa47cd21  /root/.m2/repository/org/apache/maven/plugins/maven-plugins/43/maven-plugins-43.pom' | sha256sum -c - \
@@ -2643,12 +2604,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/org/apache/rat/apache-rat-project/0.16.1' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/rat/apache-rat-project/0.16.1/apache-rat-project-0.16.1.pom' -o '/root/.m2/repository/org/apache/rat/apache-rat-project/0.16.1/apache-rat-project-0.16.1.pom' \
  && echo 'eb211cec7b87631acdaf8a5be3dfd94103ca66a912c226e92832ab748e5a37f0  /root/.m2/repository/org/apache/rat/apache-rat-project/0.16.1/apache-rat-project-0.16.1.pom' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/org/apache/rat' \
- && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/rat/maven-metadata-apache.snapshots.xml' -o '/root/.m2/repository/org/apache/rat/maven-metadata-apache.snapshots.xml' \
- && echo '6e4403386a50b0c78838a428eb94bca1dcbc8a8f0d400fddeba6fe1859572814  /root/.m2/repository/org/apache/rat/maven-metadata-apache.snapshots.xml' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/org/apache/rat' \
- && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/rat/maven-metadata-central.xml' -o '/root/.m2/repository/org/apache/rat/maven-metadata-central.xml' \
- && echo '8482256ebb6231259494f1d7936f45ffede02f6af82453decb01cc23d8e65387  /root/.m2/repository/org/apache/rat/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/org/apache/sshd/sshd-common/2.9.2' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/apache/sshd/sshd-common/2.9.2/sshd-common-2.9.2.jar' -o '/root/.m2/repository/org/apache/sshd/sshd-common/2.9.2/sshd-common-2.9.2.jar' \
  && echo 'ef912297d2355031f8f574f507f7ae4b8ec6d09381ee5724378496ba0b2114d1  /root/.m2/repository/org/apache/sshd/sshd-common/2.9.2/sshd-common-2.9.2.jar' | sha256sum -c - \
@@ -2751,9 +2706,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/org/codehaus/codehaus-parent/4' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom' -o '/root/.m2/repository/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom' \
  && echo '6b87237de8c2e1740cf80627c7f3ce3e15de1930bb250c55a1eca94fa3e014df  /root/.m2/repository/org/codehaus/codehaus-parent/4/codehaus-parent-4.pom' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/org/codehaus/modello' \
- && curl -fsSL 'https://repo1.maven.org/maven2/org/codehaus/modello/maven-metadata-central.xml' -o '/root/.m2/repository/org/codehaus/modello/maven-metadata-central.xml' \
- && echo 'a376ba0e684b08776255317cd03bc19ba1a3630c27a9ca41df53b7df4b07c296  /root/.m2/repository/org/codehaus/modello/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/org/codehaus/modello/modello-core/2.5.1' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/codehaus/modello/modello-core/2.5.1/modello-core-2.5.1.jar' -o '/root/.m2/repository/org/codehaus/modello/modello-core/2.5.1/modello-core-2.5.1.jar' \
  && echo '2d6f413d44d195770150c7b6a67737bea45e6b4a4f42785e3744c740d9171dd1  /root/.m2/repository/org/codehaus/modello/modello-core/2.5.1/modello-core-2.5.1.jar' | sha256sum -c - \
@@ -2880,9 +2832,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/org/codehaus/mojo/extra-enforcer-rules/1.11.0' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/codehaus/mojo/extra-enforcer-rules/1.11.0/extra-enforcer-rules-1.11.0.pom' -o '/root/.m2/repository/org/codehaus/mojo/extra-enforcer-rules/1.11.0/extra-enforcer-rules-1.11.0.pom' \
  && echo 'c0757c4e8d1d0432f5e11f3cbe7cdcdaaacb1737bc108b41f499d02e8c03d5aa  /root/.m2/repository/org/codehaus/mojo/extra-enforcer-rules/1.11.0/extra-enforcer-rules-1.11.0.pom' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/org/codehaus/mojo' \
- && curl -fsSL 'https://repo1.maven.org/maven2/org/codehaus/mojo/maven-metadata-central.xml' -o '/root/.m2/repository/org/codehaus/mojo/maven-metadata-central.xml' \
- && echo 'c3a43e12771ffe0b5b13a94e88240a4aedabc46f182a226e9ddc8cfa40f749b5  /root/.m2/repository/org/codehaus/mojo/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/org/codehaus/mojo/mojo-parent/34' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/codehaus/mojo/mojo-parent/34/mojo-parent-34.pom' -o '/root/.m2/repository/org/codehaus/mojo/mojo-parent/34/mojo-parent-34.pom' \
  && echo '3e395d6fbc43c09a3774cac8694ce527398305ea3fd5492d80e25af27d382a9c  /root/.m2/repository/org/codehaus/mojo/mojo-parent/34/mojo-parent-34.pom' | sha256sum -c - \
@@ -3388,9 +3337,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/org/eclipse/platform/org.eclipse.osgi/3.23.200' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/eclipse/platform/org.eclipse.osgi/3.23.200/org.eclipse.osgi-3.23.200.pom' -o '/root/.m2/repository/org/eclipse/platform/org.eclipse.osgi/3.23.200/org.eclipse.osgi-3.23.200.pom' \
  && echo 'a72da35afde481cda10e9d94b31a54c1b90a7b6850aade4c9ad9e956d7485ad0  /root/.m2/repository/org/eclipse/platform/org.eclipse.osgi/3.23.200/org.eclipse.osgi-3.23.200.pom' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/org/eclipse/sisu' \
- && curl -fsSL 'https://repo1.maven.org/maven2/org/eclipse/sisu/maven-metadata-central.xml' -o '/root/.m2/repository/org/eclipse/sisu/maven-metadata-central.xml' \
- && echo '26499a3e0a1f44a18f43d3280d43c1640566311560865a6fc2ad95983c9f2df1  /root/.m2/repository/org/eclipse/sisu/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar' -o '/root/.m2/repository/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar' \
  && echo '3e745c61748a4780839cbc6c0b10854abae3be26f3cf283a00bc002d2ed98bd1  /root/.m2/repository/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar' | sha256sum -c - \
@@ -3466,9 +3412,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/org/functionaljava/functionaljava/4.8' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/functionaljava/functionaljava/4.8/functionaljava-4.8.pom' -o '/root/.m2/repository/org/functionaljava/functionaljava/4.8/functionaljava-4.8.pom' \
  && echo 'ac9a73619340a43c9690809488665215520d576f0364459ae7f52a8e7eb130c5  /root/.m2/repository/org/functionaljava/functionaljava/4.8/functionaljava-4.8.pom' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/org/fusesource/mvnplugins' \
- && curl -fsSL 'https://repo1.maven.org/maven2/org/fusesource/mvnplugins/maven-metadata-central.xml' -o '/root/.m2/repository/org/fusesource/mvnplugins/maven-metadata-central.xml' \
- && echo '20177e8aed8f74c5370d56f433633431a23ea11f7ae41c8af734964681914328  /root/.m2/repository/org/fusesource/mvnplugins/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/org/glassfish/jaxb/jaxb-bom/2.3.2' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/glassfish/jaxb/jaxb-bom/2.3.2/jaxb-bom-2.3.2.pom' -o '/root/.m2/repository/org/glassfish/jaxb/jaxb-bom/2.3.2/jaxb-bom-2.3.2.pom' \
  && echo 'a1018bb54678ed9f5acb2f7a4084e385ff510201f4e9dbf5f75dc6a675f66be7  /root/.m2/repository/org/glassfish/jaxb/jaxb-bom/2.3.2/jaxb-bom-2.3.2.pom' | sha256sum -c - \
@@ -3490,9 +3433,6 @@ RUN set -eux \
  && mkdir -p '/root/.m2/repository/org/iq80/snappy/snappy/0.4' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom' -o '/root/.m2/repository/org/iq80/snappy/snappy/0.4/snappy-0.4.pom' \
  && echo 'a709ce17111e4149d9b79a5295644e0cd5a8355aec4b2ef4c0436aba7b25d08a  /root/.m2/repository/org/iq80/snappy/snappy/0.4/snappy-0.4.pom' | sha256sum -c - \
- && mkdir -p '/root/.m2/repository/org/jacoco' \
- && curl -fsSL 'https://repo1.maven.org/maven2/org/jacoco/maven-metadata-central.xml' -o '/root/.m2/repository/org/jacoco/maven-metadata-central.xml' \
- && echo '543d2175431b64ca863f67d34ee6442bb0d402a0031f72c5144f6d13bcc4fad4  /root/.m2/repository/org/jacoco/maven-metadata-central.xml' | sha256sum -c - \
  && mkdir -p '/root/.m2/repository/org/javassist/javassist/3.28.0-GA' \
  && curl -fsSL 'https://repo1.maven.org/maven2/org/javassist/javassist/3.28.0-GA/javassist-3.28.0-GA.jar' -o '/root/.m2/repository/org/javassist/javassist/3.28.0-GA/javassist-3.28.0-GA.jar' \
  && echo '57d0a9e9286f82f4eaa851125186997f811befce0e2060ff0a15a77f5a9dd9a7  /root/.m2/repository/org/javassist/javassist/3.28.0-GA/javassist-3.28.0-GA.jar' | sha256sum -c - \
