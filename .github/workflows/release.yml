@@ -98,7 +98,7 @@ jobs:
     name: Test before release
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/lee-mcfaul2/maven/builder@sha256:b81c7df643da1b96bdfbbcbaf6cebbdb4745f469cec7281c83ebdd76f9923a17
+      image: ghcr.io/lee-mcfaul2/maven/builder@sha256:5a6389a2976876953f9894a771d2f3486286fad023e88dcf2bedb82684fc4b00
     defaults:
       run:
         shell: bash
@@ -158,7 +158,7 @@ jobs:
     needs: test
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/lee-mcfaul2/maven/builder@sha256:b81c7df643da1b96bdfbbcbaf6cebbdb4745f469cec7281c83ebdd76f9923a17
+      image: ghcr.io/lee-mcfaul2/maven/builder@sha256:5a6389a2976876953f9894a771d2f3486286fad023e88dcf2bedb82684fc4b00
     defaults:
       run:
         shell: bash
@@ -352,7 +352,7 @@ jobs:
         include: ${{ fromJson(needs.discover.outputs.build_matrix) }}
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/lee-mcfaul2/maven/builder@sha256:b81c7df643da1b96bdfbbcbaf6cebbdb4745f469cec7281c83ebdd76f9923a17
+      image: ghcr.io/lee-mcfaul2/maven/builder@sha256:5a6389a2976876953f9894a771d2f3486286fad023e88dcf2bedb82684fc4b00
     defaults:
       run:
         shell: bash
@@ -526,7 +526,7 @@ jobs:
         include: ${{ fromJson(needs.discover.outputs.verify_matrix) }}
     runs-on: ubuntu-24.04
     container:
-      image: ghcr.io/lee-mcfaul2/maven/builder@sha256:b81c7df643da1b96bdfbbcbaf6cebbdb4745f469cec7281c83ebdd76f9923a17
+      image: ghcr.io/lee-mcfaul2/maven/builder@sha256:5a6389a2976876953f9894a771d2f3486286fad023e88dcf2bedb82684fc4b00
     defaults:
       run:
         shell: bash
@@ -782,7 +782,7 @@ jobs:
             echo "- **Commit:**               \`${GITHUB_SHA}\`"
             echo "- **Tag:**                  \`${GITHUB_REF_NAME}\`"
             echo "- **SOURCE_DATE_EPOCH:**    \`${SDE}\` (\`${ISO_TS}\`)"
-            echo "- **Builder image:**        \`ghcr.io/lee-mcfaul2/maven/builder@sha256:b81c7df643da1b96bdfbbcbaf6cebbdb4745f469cec7281c83ebdd76f9923a17\`"
+            echo "- **Builder image:**        \`ghcr.io/lee-mcfaul2/maven/builder@sha256:5a6389a2976876953f9894a771d2f3486286fad023e88dcf2bedb82684fc4b00\`"
             echo "- **Workflow:**             \`${WORKFLOW_REF}\`"
             echo
             echo "### Verifying"
