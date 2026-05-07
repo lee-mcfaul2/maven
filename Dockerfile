@@ -52,7 +52,7 @@ RUN set -eu \
 # install. Single RUN so failure aborts the layer atomically.
 RUN set -eux \
  && mkdir -p /tmp/debs && cd /tmp/debs \
- && apt-get download \
+ && apt-get -o Acquire::Retries=10 -o Acquire::http::Timeout=60 download \
       base-files=14ubuntu6 \
       bash=5.3-2ubuntu1 \
       ca-certificates=20260223 \
