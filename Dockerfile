@@ -35,8 +35,8 @@ ENV LC_ALL=C.UTF-8
 
 # Step 1: bootstrap ca-certificates so we can reach
 # the apt mirror over HTTPS.
-RUN apt-get update -qq \
- && apt-get install -y --no-install-recommends ca-certificates
+RUN apt-get -o Acquire::Retries=10 -o Acquire::http::Timeout=60 update -qq \
+ && apt-get -o Acquire::Retries=10 -o Acquire::http::Timeout=60 install -y --no-install-recommends ca-certificates
 
 # Step 2: redirect apt to the pinned snapshot.
 RUN set -eu \
@@ -46,7 +46,7 @@ RUN set -eu \
     'deb https://snapshot.ubuntu.com/ubuntu/20260425T120000Z/ resolute-security main restricted universe multiverse' \
     > /etc/apt/sources.list \
  && rm -f /etc/apt/sources.list.d/*.sources /etc/apt/sources.list.d/*.list \
- && apt-get update -qq
+ && apt-get -o Acquire::Retries=10 -o Acquire::http::Timeout=60 update -qq
 
 # Step 3: download each pinned .deb, verify its SHA256,
 # install. Single RUN so failure aborts the layer atomically.
